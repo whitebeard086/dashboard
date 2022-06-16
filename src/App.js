@@ -26,7 +26,7 @@ import {
 import "./App.css";
 
 function App() {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, setThemeSettings, currentColor, themeSettings } = useStateContext();
   return (
     <div>
       <Router>
@@ -36,7 +36,8 @@ function App() {
               <button
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ background: "blue", borderRadius: "50%" }}>
+                onClick={() => setThemeSettings(true)}
+                style={{ background: currentColor, borderRadius: "50%" }}>
                 <FiSettings />
               </button>
             </TooltipComponent>
@@ -59,6 +60,8 @@ function App() {
             </div>
 
             <div>
+              {themeSettings && <ThemeSettings />}
+              
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />

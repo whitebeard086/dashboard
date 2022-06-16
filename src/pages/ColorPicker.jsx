@@ -1,10 +1,11 @@
-import { ColorPickerComponent } from "@syncfusion/ej2-react-inputs"
+import { ColorPickerComponent } from "@syncfusion/ej2-react-inputs";
 
-import { Header } from "../components"
+import { Header } from "../components";
 
 const change = (args) => {
-  document.getElementById("preview").style.backgroundColor = args.currentValue.hex;
-}
+  document.getElementById("preview").style.backgroundColor =
+    args.currentValue.hex;
+};
 
 const ColorPicker = () => {
   return (
@@ -13,23 +14,28 @@ const ColorPicker = () => {
       <div className="text-center">
         <div id="preview" />
         <div className="flex justify-center items-center gap-20 flex-wrap">
-          <div className="mr-5">
-            <p className="text-2xl font-semibold mt-2 mb-4">Inline Pallete</p>
-            <ColorPickerComponent 
+          <div>
+            <p className="text-2xl font-semibold mt-2 mb-4">
+              Inline Pallete
+            </p>
+            <ColorPickerComponent
               id="inline-pallete"
               mode="Palette"
-              modeSwitcher={false} 
+              modeSwitcher={false}
               inline
               showButtons={false}
               change={change}
+              className="mt-2"
             />
           </div>
           <div>
-            <p className="text-2xl font-semibold mt-2 mb-4">Inline Picker</p>
-            <ColorPickerComponent 
+            <p className="text-2xl font-semibold mt-2 mb-4">
+              Inline Picker
+            </p>
+            <ColorPickerComponent
               id="inline-pallete"
               mode="Picker"
-              modeSwitcher={false} 
+              modeSwitcher={false}
               inline
               showButtons={false}
               change={change}
@@ -38,6 +44,6 @@ const ColorPicker = () => {
         </div>
       </div>
     </div>
-  )
-}
-export default ColorPicker
+  );
+};
+export default ColorPicker;
